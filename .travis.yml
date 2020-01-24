@@ -1,7 +1,8 @@
 sudo: required
-
 services:
-  - docker
-
-script:
-  - ./test.sh
+- docker
+install: true
+script: "./test"
+branches:
+  only:
+  - master

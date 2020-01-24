@@ -1,7 +1,7 @@
 resource "aws_iam_policy" "secrets_policy" {
   name        = "${var.environment}-${var.component}-secrets"
   description = "Secrets access"
-  policy      = "${data.aws_iam_policy_document.secrets_access.json}"
+  policy      = data.aws_iam_policy_document.secrets_access.json
 }
 
 locals {
@@ -20,3 +20,4 @@ data "aws_iam_policy_document" "secrets_access" {
     ]
   }
 }
+
